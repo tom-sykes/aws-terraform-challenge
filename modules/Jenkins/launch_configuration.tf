@@ -8,7 +8,7 @@ resource "aws_launch_configuration" "LaunchConfiguration" {
 
     key_name = "markPendleburyKP.pem"
 
-    
+
 
     lifecycle {
         create_before_destroy = true

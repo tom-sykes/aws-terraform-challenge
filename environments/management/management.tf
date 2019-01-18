@@ -14,7 +14,7 @@ module "management_asg" {
     health_check_type = "ELB"
     management_ssh_port = "22"
     user_data = "../modules/jenkins/launch_configuration/lib/installJenkins.sh"
-    
+    management_server_port = 80
 }
 
 

@@ -15,7 +15,8 @@ variable "min_size" {
 }
 
 variable "environment" {
-    description = "Environment tag"
+  description = "Environment tag"
+  default = "dev"
 }
 
 
@@ -72,4 +73,13 @@ variable "management_jenkins_listen_port" {
 
 variable "user_data" {
   description = "The path to the user data"
+}
+
+variable "management_server_port" {
+  description = "Default server port to listen to"
+}
+
+variable "application_name" {
+  description = "Name of application"
+  default = "aws-terraform-challenge"
 }

@@ -23,3 +23,21 @@ resource "aws_security_group" "management_sg" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
+
+resource "aws_security_group" "management_elb_sg" {
+  name = "${var.environment}-${var.service_name}-elb-sg"
+
+  ingress {
+    from_port = "${var.management_server_port}"
+    protocol = "tcp"
+    to_port = "${var.management_server_port}"
+    cidr_blocks = ["82.219.68.58/32"]
+  }
+
+  egress {
+    from_port = "${var.management_server_port}"
+    protocol = "tcp"
+    to_port = "${var.management_server_port}"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}

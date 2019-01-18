@@ -1,4 +1,5 @@
 resource "aws_autoscaling_group" "ASG" {
+  launch_configuration = "${aws_launch_configuration.LaunchConfiguration.name}"
   availability_zones = ["${data.aws_availability_zones.available.names}"]
 
   load_balancers = ["${aws_elb.elb.name}"]
@@ -11,7 +12,6 @@ resource "aws_autoscaling_group" "ASG" {
 
   vpc_zone_identifier = ["${cidrsubnet("172.30.0.0/20", 8, 3)}"]
 
-  
 
   tag {
     key = "Name"
