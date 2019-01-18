@@ -7,7 +7,7 @@ resource "aws_vpc" "vpc" {
 
 resource "aws_subnet" "public_subnet0" {
   vpc_id     = "${aws_vpc.vpc.id}"
-  cidr_block = "172.30.0.0/16"
+  cidr_block = "172.30.0.0/23"
 
   # availability_zone = 
 
@@ -17,7 +17,7 @@ resource "aws_subnet" "public_subnet0" {
 }
 resource "aws_subnet" "public_subnet1" {
   vpc_id     = "${aws_vpc.vpc.id}"
-  cidr_block = "172.30.0.0/16"
+  cidr_block = "172.30.2.0/23"
 
   # availability_zone = 
 
@@ -27,7 +27,7 @@ resource "aws_subnet" "public_subnet1" {
 }
 resource "aws_subnet" "public_subnet2" {
   vpc_id     = "${aws_vpc.vpc.id}"
-  cidr_block = "172.30.0.0/16"
+  cidr_block = "172.30.4.0/23"
 
   # availability_zone = 
 
